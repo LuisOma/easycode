@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/register_nav"
+    app:startDestination="@id/genderFragment">
+
+    <fragment
+        android:id="@+id/genderFragment"
+        android:name="com.example.easycode.ui.register.gender.GenderFragment"
+        android:label="GenderFragment" >
+        <action
+            android:id="@+id/action_genderFragment_to_goalFragment"
+            app:destination="@id/goalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ageFragment"
+        android:name="com.example.easycode.ui.register.age.AgeFragment"
+        android:label="AgeFragment" >
+        <action
+            android:id="@+id/action_ageFragment_to_mailFragment"
+            app:destination="@id/mailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/goalFragment"
+        android:name="com.example.easycode.ui.register.goal.GoalFragment"
+        android:label="GoalFragment" >
+        <action
+            android:id="@+id/action_goalFragment_to_levelFragment"
+            app:destination="@id/levelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/levelFragment"
+        android:name="com.example.easycode.ui.register.level.LevelFragment"
+        android:label="LevelFragment" >
+        <action
+            android:id="@+id/action_levelFragment_to_weightFragment"
+            app:destination="@id/weightFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weightFragment"
+        android:name="com.example.easycode.ui.register.weight.WeightFragment"
+        android:label="WeightFragment" >
+        <action
+            android:id="@+id/action_weightFragment_to_ageFragment"
+            app:destination="@id/ageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mailFragment"
+        android:name="com.example.easycode.ui.register.mail.MailFragment"
+        android:label="MailFragment" />
+</navigation>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.easycode.ui.register.RegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="32dp"
+            android:text="¿Cuál es tu nivel de condición fisica?"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_coach_app_03"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintBottom_toTopOf="@id/btnContinuar"
+            >
+
+            <Button
+                android:id="@+id/btnBeginner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="principiante"
+                android:layout_marginVertical="8dp"
+                app:backgroundTint="@android:color/transparent"
+                app:cornerRadius="16dp"
+                app:rippleColor="#33AAAAAA"
+                app:strokeColor="@color/green_primary"
+                app:strokeWidth="1dp"
+                />
+
+            <Button
+                android:id="@+id/btnMiddle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="intermedio"
+                android:layout_marginVertical="8dp"
+                app:backgroundTint="@android:color/transparent"
+                app:cornerRadius="16dp"
+                app:rippleColor="#33AAAAAA"
+                app:strokeColor="@color/green_primary"
+                app:strokeWidth="1dp"
+                />
+
+            <Button
+                android:id="@+id/btnAdvanced"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="avanzado"
+                android:layout_marginVertical="8dp"
+                app:backgroundTint="@android:color/transparent"
+                app:cornerRadius="16dp"
+                app:rippleColor="#33AAAAAA"
+                app:strokeColor="@color/green_primary"
+                app:strokeWidth="1dp"
+                />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinuar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continuar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="32dp"
+            app:backgroundTint="@color/green_primary"
+            app:cornerRadius="16dp"
+            app:rippleColor="#33AAAAAA"
+            app:strokeWidth="1dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
