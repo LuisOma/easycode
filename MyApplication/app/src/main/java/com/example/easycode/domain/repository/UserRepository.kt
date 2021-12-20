@@ -27,4 +27,23 @@ object UserRepository {
         res
     }
 
+    suspend fun login(mail: String, pass: String): ApiResponse = coroutineScope {
+        var res = ApiResponse()
+
+        try {
+            val retrofit = RetrofitClient().getRetrofitApi(RetrofitClient.BASEURL)
+            val userService = retrofit.create(UserAPI::class.java)
+
+            val result = userService.login(mail,pass)
+
+            if (result.isSuccessful) {
+                res = result.body()!!
+            }
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        res
+    }
+
 }

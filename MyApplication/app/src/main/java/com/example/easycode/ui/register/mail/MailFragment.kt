@@ -1,5 +1,6 @@
 package com.example.easycode.ui.register.mail
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.easycode.R
 import com.example.easycode.databinding.FragmentMailBinding
+import com.example.easycode.ui.login.LoginActivity
+import com.example.easycode.ui.register.RegisterActivity
 import com.example.easycode.ui.register.RegisterViewModel
 
 class MailFragment : Fragment(), View.OnClickListener {
@@ -47,16 +50,30 @@ class MailFragment : Fragment(), View.OnClickListener {
             binding.mailInput.error = it
         })
 
+        viewModel?.passActivity?.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                startActivity(Intent(context, LoginActivity::class.java))
+                activity?.finish()
+            }
+        })
+
+        viewModel?.lottieVisible?.observe(viewLifecycleOwner, Observer {
+            if(it){
+                binding.loading.visibility = View.VISIBLE
+                binding.mainCont.visibility = View.GONE
+            }else{
+                binding.loading.visibility = View.GONE
+                binding.mainCont.visibility = View.VISIBLE
+            }
+        })
+
         return binding.root
     }
 
     override fun onClick(p0: View?) {
-        when(p0?.id){
+        when (p0?.id) {
             R.id.btnContinuar -> {
                 viewModel?.validateData()
-                if(viewModel!!.passActivity.value == true){
-                    Toast.makeText(context, "Its toast!", Toast.LENGTH_SHORT).show()
-                }
             }
         }
     }

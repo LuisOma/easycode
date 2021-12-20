@@ -19,4 +19,13 @@ interface UserAPI {
                         @Field("age") age: String,
                         @Field("funcion") funcion: String
                         ): Response<ApiResponse>
+
+    @FormUrlEncoded
+    @Headers(
+        "Content-Type: application/x-www-form-urlencoded")
+    @POST("test_general_app/webservice/controller_last.php")
+    suspend fun login(  @Field("email") mail: String,
+                        @Field("password") pass: String
+    ): Response<ApiResponse>
+
 }

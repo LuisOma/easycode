@@ -26,6 +26,7 @@ class RegisterViewModel : ViewModel() {
     val passMLD = MutableLiveData<String>()
     val passErrorMLD = MutableLiveData<String>()
     var passActivity = MutableLiveData<Boolean>()
+    val lottieVisible = MutableLiveData<Boolean>(false)
 
 
     fun setGender(value: Int) {
@@ -80,6 +81,7 @@ class RegisterViewModel : ViewModel() {
     }
 
     private fun callService() {
+        lottieVisible.value = true
         GlobalScope.launch {
             val rqt = UserRepository.register(nameMLD.value?:"",
                 mailMLD.value?:"",
@@ -91,12 +93,14 @@ class RegisterViewModel : ViewModel() {
                 ageMLD.value?:""
                 )
             launch(Dispatchers.Main) {
-            }
-            if(rqt.state.toString() == "200"){
-                passActivity.postValue(true)
+                lottieVisible.value = false
+                if(rqt.state.toString() == "200"){
+                    passActivity.value = true
                 } else {
-                nameErrorMLD.value = "Escribe un nombre"
+                    nameErrorMLD.value = "Escribe un nombre"
+                }
             }
+
         }
     }
 

@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SaulNeri/Downloads/easycode-main/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.21875" />
+        <entry key="..\:/SaulNeri/Downloads/easycode-main/MyApplication/app/src/main/res/layout/activity_register.xml" value="0.21875" />
+        <entry key="..\:/SaulNeri/Downloads/easycode-main/MyApplication/app/src/main/res/layout/fragment_login.xml" value="0.21875" />
+        <entry key="..\:/SaulNeri/Downloads/easycode-main/MyApplication/app/src/main/res/layout/fragment_mail.xml" value="0.21875" />
         <entry key="..\:/Users/lmontes/Downloads/MyApplicationEasy/MyApplication/app/src/main/res/layout/activity_register.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/lmontes/Downloads/MyApplicationEasy/MyApplication/app/src/main/res/layout/activity_splash.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/lmontes/Downloads/MyApplicationEasy/MyApplication/app/src/main/res/layout/fragment_age.xml" value="0.165" />

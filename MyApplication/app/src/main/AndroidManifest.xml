@@ -26,6 +26,8 @@
         </activity>
         <activity android:name="com.example.easycode.ui.register.RegisterActivity">
         </activity>
+        <activity android:name="com.example.easycode.ui.login.LoginActivity">
+        </activity>
     </application>
 
 </manifest>
